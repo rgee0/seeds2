@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd /home/pi/seeds2/
-python main.py
+python3 main.py
