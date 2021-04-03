@@ -19,7 +19,7 @@ def read_image():
         camera.resolution = (config["camera"]["width"], config["camera"]["height"])
         # Camera warm-up time
         time.sleep(config["camera"]["preview_time"])
-        camera.capture(stream, config["camera"]["encoding"])
+        camera.capture(stream, format=config["camera"]["encoding"], quality=config["camera"]["image_quality"])
     return stream
 
 def watermark(filename, msg):
