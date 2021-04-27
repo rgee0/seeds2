@@ -9,6 +9,12 @@ seeds2
 
 ### Installation
 
+* Enable the BME280 interface
+
+```
+sudo raspi-config nonint do_i2c 0
+```
+
 * Install dependencies
 
 ```
@@ -30,7 +36,7 @@ $ unzip roboto.zip -d roboto
 
 ### Configuration
 
-Most configuration can be achieved without altering the python code via `config.py`.
+Most configuration can be achieved via `config.py` without altering the python code.  The exception to this is [configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
 
 * Update your access keys
 
@@ -62,7 +68,7 @@ __Scheduled:__
 Use `cron` and this entry:
 
 ```cron
-*/10 08-20 * * * /home/pi/seeds2/seed-it.sh
+*/5 08-19 * * * PATH=/home/pi/.local/bin:$PATH ; /home/pi/code/seeds2/seed-it.sh >/tmp/cron.out 2>&1
 ```
 
-This results in one image/tweet every 10 minutes between 8am and 8:50pm.
+This results in one image/tweet every 5 minutes between 8am and 7:55pm.

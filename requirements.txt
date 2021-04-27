@@ -1,3 +1,6 @@
 tweepy
 picamera
 pillow
+awscli
+pimoroni-bme280
+smbus
